@@ -50,8 +50,9 @@ router.post('/login', (req, res, next) => {
     .catch(next)
 });
 
-router.put('/update', (req, res, next) => {
-  router.update(req.body)
+router.put('/update/:id', (req, res, next) => {
+  console.log(req.body,req.params.id )
+  Auth.update(req.params.id,req.body)
     .then(data => res.json(data))
     .catch(next)
 })

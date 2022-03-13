@@ -15,8 +15,9 @@ function findBy(filter) {
 function Add(data) { // done for you
     return db('users').insert(data, ['*'])
 }
-function update(data) { // done for you
-    return db('users').where({user_id: data.user_id}).update(data, ['*'])
+function update(user_id ,data) { // done for you
+    console.log(data)
+    return db('users').where({user_id}).update(data, ['*'])
 }
 
 module.exports = {
